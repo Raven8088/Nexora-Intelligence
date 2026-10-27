@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: nexora-intelligence
+  # Error bodies never expose internals.
+  web:
+    error:
+      include-message: never
+      include-stacktrace: never
+      include-binding-errors: never
+      include-exception: false
+
+server:
+  port: ${INTELLIGENCE_PORT:8100}
+
+# Only the health endpoint is exposed, without details. No business endpoint exists in INT-1.
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
+      show-components: never
+      probes:
+        enabled: true
