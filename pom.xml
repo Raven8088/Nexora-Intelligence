@@ -32,6 +32,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+        <!-- INT-3.4: standard JWT verification (signature via JWKS, expiry, issuer, audience) of the service tokens
+             Intelligence sends to Semantic. Only the JOSE library: no web security auto-configuration. -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-jose</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

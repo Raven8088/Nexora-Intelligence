@@ -1,0 +1,36 @@
+== esquema exact
+  ok_day                     ACEPTA
+  ok_last                    ACEPTA
+  ok_month                   ACEPTA
+  ok_out_of_scope            ACEPTA
+  ok_p2_null                 ACEPTA
+  ok_quarter                 ACEPTA
+  ok_range_p3                ACEPTA
+  ok_relative                ACEPTA
+  ok_year                    ACEPTA
+  bad_day_with_range         RECHAZA (Unexpected character 'n' at position 246)
+  bad_last_without_unit      RECHAZA (Unexpected character 'n' at position 307)
+  bad_month_without_month    RECHAZA (Unexpected character 'n' at position 236)
+  bad_range_from_only        RECHAZA (Unexpected character 'n' at position 278)
+  bad_relative_plus_year     RECHAZA (Unexpected character '2' at position 211)
+  bad_v7_range_nulls         RECHAZA (Unexpected character 'n' at position 260)
+  bad_year_nulls             RECHAZA (Unexpected character 'n' at position 207)
+  bad_year_out_of_range      RECHAZA (Unexpected character '8' at position 208)
+== esquema compact
+  ok_day                     ACEPTA
+  ok_last                    ACEPTA
+  ok_month                   ACEPTA
+  ok_out_of_scope            ACEPTA
+  ok_p2_null                 ACEPTA
+  ok_quarter                 ACEPTA
+  ok_range_p3                ACEPTA
+  ok_relative                ACEPTA
+  ok_year                    ACEPTA
+  bad_day_with_range         ACEPTA
+  bad_last_without_unit      ACEPTA
+  bad_month_without_month    ACEPTA
+  bad_range_from_only        ACEPTA
+  bad_relative_plus_year     ACEPTA
+  bad_v7_range_nulls         ACEPTA
+  bad_year_nulls             ACEPTA
+  bad_year_out_of_range      RECHAZA (Unexpected character '8' at position 208)

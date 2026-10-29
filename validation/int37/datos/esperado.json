@@ -1,0 +1,91 @@
+{
+  "_nota": "Resultados esperados sobre los DATOS SINTÉTICOS de 01-crear-sintetico.sql (ficticios). Orden: ascendente, NULL al final. P3: [2026-10-01 00:00, 2026-10-08 00:00).",
+  "dataSet": "nexora_demo_sintetico/sintetico",
+  "P1": {
+    "question": "¿Cuántos pozos hay por campo?",
+    "columns": [
+      "campo",
+      "numero_pozos"
+    ],
+    "rows": [
+      [
+        "CAMPO FICTICIO ALFA",
+        7
+      ],
+      [
+        "CAMPO FICTICIO BETA",
+        6
+      ],
+      [
+        "CAMPO FICTICIO GAMMA",
+        5
+      ],
+      [
+        null,
+        2
+      ]
+    ]
+  },
+  "P2": {
+    "question": "¿Cuántos pozos hay por estatus del pozo?",
+    "columns": [
+      "estatus_pozo",
+      "numero_pozos"
+    ],
+    "rows": [
+      [
+        "ABANDONADO",
+        2
+      ],
+      [
+        "ACTIVO",
+        8
+      ],
+      [
+        "CERRADO",
+        4
+      ],
+      [
+        "EN PERFORACION",
+        5
+      ],
+      [
+        null,
+        1
+      ]
+    ]
+  },
+  "P3": {
+    "question": "¿Cuántas actividades se registraron por día entre el 1 y el 7 de octubre de 2026?",
+    "columns": [
+      "fecha_actividad",
+      "numero_actividades"
+    ],
+    "rows": [
+      [
+        "2026-10-01",
+        3
+      ],
+      [
+        "2026-10-02",
+        5
+      ],
+      [
+        "2026-10-04",
+        4
+      ],
+      [
+        "2026-10-05",
+        6
+      ],
+      [
+        "2026-10-06",
+        2
+      ],
+      [
+        "2026-10-07",
+        7
+      ]
+    ]
+  }
+}

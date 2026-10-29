@@ -1,0 +1,538 @@
+{
+  "kind": "nexora-keycloak-inventory/1",
+  "generatedAt": "2026-10-29T03:40:04Z",
+  "keycloakUrl": "http://localhost:8180",
+  "realm": "nexora",
+  "restorable": false,
+  "note": "Inventario SIN SECRETOS. No es una copia restaurable: no contiene contraseñas, secretos de clientes, claves de firma ni credenciales, y Keycloak asigna ids nuevos al importar. Conserva los sub actuales como referencia de trazabilidad.",
+  "runtimeOnly": {
+    "roles": [],
+    "clients": [],
+    "clientScopes": [
+      "basic",
+      "roles",
+      "profile",
+      "email",
+      "web-origins",
+      "acr",
+      "offline_access",
+      "address",
+      "phone",
+      "microprofile-jwt",
+      "organization",
+      "service_account"
+    ],
+    "groups": [],
+    "users": []
+  },
+  "notes": [
+    "clientScopes de runtimeOnly incluye los scopes integrados de Keycloak (basic, profile, roles...): compárelos con la lista conocida antes de concluir que son cambios manuales."
+  ],
+  "users": [
+    {
+      "sub": "45538ed1-a9f8-4bf9-b795-dfa1372c7200",
+      "username": "platform.admin",
+      "enabled": true,
+      "serviceAccountClientId": null,
+      "email": "platform.admin@nexora.dev",
+      "firstName": "Platform",
+      "lastName": "Admin",
+      "createdTimestamp": 1793245201176,
+      "attributes": {},
+      "realmRoles": [
+        "default-roles-nexora",
+        "PLATFORM_ADMIN"
+      ],
+      "groups": []
+    },
+    {
+      "sub": "2c80a384-4d4f-4e09-b800-8eda86784615",
+      "username": "steward.demo",
+      "enabled": true,
+      "serviceAccountClientId": null,
+      "email": "steward.demo@nexora.dev",
+      "firstName": "Steward",
+      "lastName": "Demo",
+      "createdTimestamp": 1793245201176,
+      "attributes": {},
+      "realmRoles": [
+        "default-roles-nexora",
+        "STEWARD"
+      ],
+      "groups": [
+        "/tenant-demo"
+      ]
+    },
+    {
+      "sub": "3aa8c19e-ba1a-4389-8801-0a8b959623c0",
+      "username": "viewer.demo",
+      "enabled": true,
+      "serviceAccountClientId": null,
+      "email": "viewer.demo@nexora.dev",
+      "firstName": "Viewer",
+      "lastName": "Demo",
+      "createdTimestamp": 1793245201176,
+      "attributes": {},
+      "realmRoles": [
+        "default-roles-nexora",
+        "VIEWER"
+      ],
+      "groups": [
+        "/tenant-demo"
+      ]
+    },
+    {
+      "sub": "c9a3fd7e-e70a-4432-9d0a-79e038900a14",
+      "username": "auditor.demo",
+      "enabled": true,
+      "serviceAccountClientId": null,
+      "email": "auditor.demo@nexora.dev",
+      "firstName": "Auditor",
+      "lastName": "Demo",
+      "createdTimestamp": 1793245201176,
+      "attributes": {},
+      "realmRoles": [
+        "AUDITOR",
+        "default-roles-nexora"
+      ],
+      "groups": [
+        "/tenant-demo"
+      ]
+    },
+    {
+      "sub": "79c0430d-3d40-4630-be96-050ef710070a",
+      "username": "steward.other",
+      "enabled": true,
+      "serviceAccountClientId": null,
+      "email": "steward.other@nexora.dev",
+      "firstName": "Steward",
+      "lastName": "Other",
+      "createdTimestamp": 1793245201176,
+      "attributes": {},
+      "realmRoles": [
+        "default-roles-nexora",
+        "STEWARD"
+      ],
+      "groups": [
+        "/tenant-other"
+      ]
+    },
+    {
+      "sub": "913c20e5-9590-416a-b8b2-a2c9f655f279",
+      "username": "service-account-nexora-reports-dev",
+      "enabled": true,
+      "serviceAccountClientId": "nexora-reports-dev",
+      "email": null,
+      "firstName": null,
+      "lastName": null,
+      "createdTimestamp": 1793245201176,
+      "attributes": {},
+      "realmRoles": [
+        "default-roles-nexora",
+        "REPORTS_CLIENT"
+      ],
+      "groups": [
+        "/tenant-demo"
+      ]
+    }
+  ],
+  "masterUsers": [
+    {
+      "sub": "042ec7ea-c6b8-4a5f-b216-583863e41dd5",
+      "username": "admin",
+      "enabled": true
+    }
+  ],
+  "realmExport": {
+    "realm": "nexora",
+    "roles": {
+      "realm": [
+        {
+          "id": "816ed8e1-a627-40f2-bb40-b49634b5ce6a",
+          "name": "offline_access",
+          "description": "",
+          "composite": false,
+          "clientRole": false,
+          "containerId": "nexora",
+          "attributes": {}
+        },
+        {
+          "id": "46579627-30b6-4cc0-b038-0290091d7921",
+          "name": "uma_authorization",
+          "description": "",
+          "composite": false,
+          "clientRole": false,
+          "containerId": "nexora",
+          "attributes": {}
+        },
+        {
+          "id": "bfaa91c2-4259-4163-b0bf-bf0705cc0b02",
+          "name": "default-roles-nexora",
+          "description": "",
+          "composite": true,
+          "clientRole": false,
+          "containerId": "nexora",
+          "attributes": {}
+        },
+        {
+          "id": "d2c4121f-f0b4-42b2-a78a-0288b8f9a41b",
+          "name": "VIEWER",
+          "description": "",
+          "composite": false,
+          "clientRole": false,
+          "containerId": "nexora",
+          "attributes": {}
+        },
+        {
+          "id": "9081bde0-13d2-44a6-b065-9a6846981c0c",
+          "name": "EDITOR",
+          "description": "",
+          "composite": false,
+          "clientRole": false,
+          "containerId": "nexora",
+          "attributes": {}
+        },
+        {
+          "id": "79cfa4b6-eb35-48a1-bfab-5f2779292f62",
+          "name": "APPROVER",
+          "description": "",
+          "composite": false,
+          "clientRole": false,
+          "containerId": "nexora",
+          "attributes": {}
+        },
+        {
+          "id": "312dfaf1-d3cf-4047-9573-da6d3234c24d",
+          "name": "STEWARD",
+          "description": "",
+          "composite": false,
+          "clientRole": false,
+          "containerId": "nexora",
+          "attributes": {}
+        },
+        {
+          "id": "eb889500-b25f-4d89-9e8f-23df411ee70a",
+          "name": "AUDITOR",
+          "description": "",
+          "composite": false,
+          "clientRole": false,
+          "containerId": "nexora",
+          "attributes": {}
+        },
+        {
+          "id": "66c0cff2-dfec-4013-929c-1d95dc164fcc",
+          "name": "REPORTS_CLIENT",
+          "description": "",
+          "composite": false,
+          "clientRole": false,
+          "containerId": "nexora",
+          "attributes": {}
+        },
+        {
+          "id": "2764a60f-8ad9-4079-95df-bdcf27549e95",
+          "name": "AI_AGENT",
+          "description": "",
+          "composite": false,
+          "clientRole": false,
+          "containerId": "nexora",
+          "attributes": {}
+        },
+        {
+          "id": "41d2822f-848a-4d15-b7f3-24ca84d441c9",
+          "name": "PLATFORM_ADMIN",
+          "description": "",
+          "composite": false,
+          "clientRole": false,
+          "containerId": "nexora",
+          "attributes": {}
+        }
+      ]
+    },
+    "clients": [
+      {
+        "id": "e9965be7-b088-4f43-8e57-6e13d87587e8",
+        "clientId": "nexora-semantic-dev",
+        "name": "Nexora Semantic (development users)",
+        "enabled": true,
+        "publicClient": true,
+        "bearerOnly": false,
+        "serviceAccountsEnabled": false,
+        "standardFlowEnabled": true,
+        "implicitFlowEnabled": false,
+        "directAccessGrantsEnabled": true,
+        "clientAuthenticatorType": "client-secret",
+        "secret": "<omitido>",
+        "fullScopeAllowed": true,
+        "protocol": "openid-connect",
+        "attributes": {},
+        "redirectUris": [
+          "http://localhost:*"
+        ],
+        "protocolMappers": [
+          {
+            "id": "f90f1261-a65f-42c0-abb7-d6d7da7c7a75",
+            "name": "principal-type",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-hardcoded-claim-mapper",
+            "config": {
+              "claim.name": "principal_type",
+              "claim.value": "HUMAN",
+              "jsonType.label": "String",
+              "access.token.claim": "true"
+            }
+          }
+        ]
+      },
+      {
+        "id": "27bd0944-9caf-4775-80d7-6aee6a1b9b38",
+        "clientId": "nexora-reports-dev",
+        "name": "Nexora Reports (development service client)",
+        "enabled": true,
+        "publicClient": false,
+        "bearerOnly": false,
+        "serviceAccountsEnabled": true,
+        "standardFlowEnabled": false,
+        "implicitFlowEnabled": false,
+        "directAccessGrantsEnabled": false,
+        "clientAuthenticatorType": "client-secret",
+        "secret": "<omitido>",
+        "fullScopeAllowed": true,
+        "protocol": "openid-connect",
+        "attributes": {},
+        "redirectUris": [],
+        "protocolMappers": [
+          {
+            "id": "99333cb4-9529-491e-a2a8-bc725a7fe95b",
+            "name": "principal-type",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-hardcoded-claim-mapper",
+            "config": {
+              "claim.name": "principal_type",
+              "claim.value": "SERVICE",
+              "jsonType.label": "String",
+              "access.token.claim": "true"
+            }
+          }
+        ]
+      }
+    ],
+    "clientScopes": [
+      {
+        "id": "4bb784ff-818a-45c3-a993-86c252805cc0",
+        "name": "basic",
+        "protocol": "openid-connect",
+        "attributes": {},
+        "protocolMappers": [
+          {
+            "id": "565db088-614c-420a-bbe5-1f410e208b7f",
+            "name": "sub",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-sub-mapper",
+            "config": {
+              "access.token.claim": "true"
+            }
+          }
+        ]
+      },
+      {
+        "id": "377cb03c-38d0-46a6-b475-df53bc3ad5ed",
+        "name": "roles",
+        "protocol": "openid-connect",
+        "attributes": {},
+        "protocolMappers": [
+          {
+            "id": "6e2ce460-03a8-4d6b-89b4-51d79121e6ad",
+            "name": "realm roles",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-usermodel-realm-role-mapper",
+            "config": {
+              "claim.name": "realm_access.roles",
+              "multivalued": "true",
+              "access.token.claim": "true"
+            }
+          },
+          {
+            "id": "e5d7cd1e-9688-4753-bacd-9b52aa58ef8e",
+            "name": "audience resolve",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-audience-resolve-mapper",
+            "config": {}
+          }
+        ]
+      },
+      {
+        "id": "c953baf4-748a-422d-8510-37dc47698129",
+        "name": "profile",
+        "protocol": "openid-connect",
+        "attributes": {},
+        "protocolMappers": []
+      },
+      {
+        "id": "3bff9594-70c1-4cb6-8935-8174bd16e64a",
+        "name": "email",
+        "protocol": "openid-connect",
+        "attributes": {},
+        "protocolMappers": []
+      },
+      {
+        "id": "c9068014-1c9f-45ac-b166-a96be34e18c5",
+        "name": "web-origins",
+        "protocol": "openid-connect",
+        "attributes": {},
+        "protocolMappers": []
+      },
+      {
+        "id": "3896d055-966d-432d-ba32-eb7c8fe202fb",
+        "name": "acr",
+        "protocol": "openid-connect",
+        "attributes": {},
+        "protocolMappers": []
+      },
+      {
+        "id": "045ee89b-e9d8-4f09-98dc-f7a3d56eaac8",
+        "name": "offline_access",
+        "protocol": "openid-connect",
+        "attributes": {},
+        "protocolMappers": []
+      },
+      {
+        "id": "85b3db1f-9a81-4a7c-a4b9-b57af9885324",
+        "name": "address",
+        "protocol": "openid-connect",
+        "attributes": {},
+        "protocolMappers": []
+      },
+      {
+        "id": "9bdda8d8-5405-4e27-a799-c5043ebe4f2d",
+        "name": "phone",
+        "protocol": "openid-connect",
+        "attributes": {},
+        "protocolMappers": []
+      },
+      {
+        "id": "965323aa-fe44-4eb6-b285-b6451b94576a",
+        "name": "microprofile-jwt",
+        "protocol": "openid-connect",
+        "attributes": {},
+        "protocolMappers": []
+      },
+      {
+        "id": "70fd1cf7-4972-46c7-af32-b1af20a838a0",
+        "name": "organization",
+        "protocol": "openid-connect",
+        "attributes": {},
+        "protocolMappers": []
+      },
+      {
+        "id": "678d3bbe-b407-4822-81aa-6c8f16919ee7",
+        "name": "service_account",
+        "protocol": "openid-connect",
+        "attributes": {},
+        "protocolMappers": [
+          {
+            "id": "2274a4b4-83d6-483f-b787-288ae633dc4e",
+            "name": "Client ID",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-usersessionmodel-note-mapper",
+            "config": {
+              "claim.name": "client_id",
+              "user.session.note": "client_id",
+              "access.token.claim": "true"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ff9b4740-b547-4376-95f6-39c6bb302998",
+        "name": "nexora-semantic",
+        "protocol": "openid-connect",
+        "attributes": {
+          "include.in.token.scope": "false"
+        },
+        "protocolMappers": [
+          {
+            "id": "ab4e6656-c5a4-4341-a6df-c79cf3a62909",
+            "name": "sub",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-sub-mapper",
+            "config": {
+              "access.token.claim": "true",
+              "introspection.token.claim": "true"
+            }
+          },
+          {
+            "id": "399c17b7-75cf-4c1e-bc8e-2d92bf41bdc0",
+            "name": "audience",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-audience-mapper",
+            "config": {
+              "included.custom.audience": "nexora-semantic",
+              "access.token.claim": "true",
+              "id.token.claim": "false"
+            }
+          },
+          {
+            "id": "cd230b69-ec8f-409c-9fbf-f115ac967c7c",
+            "name": "tenant",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-usermodel-attribute-mapper",
+            "config": {
+              "user.attribute": "tenant",
+              "claim.name": "tenant",
+              "jsonType.label": "String",
+              "aggregate.attrs": "false",
+              "multivalued": "false",
+              "access.token.claim": "true",
+              "id.token.claim": "false",
+              "userinfo.token.claim": "false"
+            }
+          },
+          {
+            "id": "24aaf687-422e-4f69-ae1a-b736a0c8bcb7",
+            "name": "roles",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-usermodel-realm-role-mapper",
+            "config": {
+              "claim.name": "roles",
+              "jsonType.label": "String",
+              "multivalued": "true",
+              "access.token.claim": "true",
+              "id.token.claim": "false",
+              "userinfo.token.claim": "false"
+            }
+          }
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "id": "cd42293c-b0e2-4705-baca-64d1225c7a96",
+        "name": "tenant-demo",
+        "path": "/tenant-demo",
+        "attributes": {
+          "tenant": [
+            "11111111-1111-4111-8111-111111111111"
+          ]
+        },
+        "subGroupCount": 0,
+        "subGroups": []
+      },
+      {
+        "id": "c947acf9-6a21-49ec-8100-62a2f2df319d",
+        "name": "tenant-other",
+        "path": "/tenant-other",
+        "attributes": {
+          "tenant": [
+            "22222222-2222-4222-8222-222222222222"
+          ]
+        },
+        "subGroupCount": 0,
+        "subGroups": []
+      }
+    ],
+    "passwordPolicy": "<omitido>",
+    "smtpServer": {
+      "password": "<omitido>"
+    }
+  }
+}

@@ -1,6 +1,10 @@
 package com.nexora.intelligence;
 
+import com.nexora.intelligence.application.planning.QuestionPlanningService;
+import com.nexora.intelligence.application.port.out.LogicalPlanClient;
 import com.nexora.intelligence.application.port.out.QuestionInterpreter;
+import com.nexora.intelligence.application.port.out.ReportExecutionClient;
+import com.nexora.intelligence.application.port.out.SemanticCatalogClient;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -32,6 +36,14 @@ class NexoraIntelligenceApplicationTest {
     @Test
     void contextStartsWithoutAnyInterpreterAdapter() {
         assertThat(context.getBeanNamesForType(QuestionInterpreter.class)).isEmpty();
+    }
+
+    @Test
+    void contextStartsWithoutSemanticAdaptersOrPlanningAsBefore() {
+        assertThat(context.getBeanNamesForType(SemanticCatalogClient.class)).isEmpty();
+        assertThat(context.getBeanNamesForType(LogicalPlanClient.class)).isEmpty();
+        assertThat(context.getBeanNamesForType(QuestionPlanningService.class)).isEmpty();
+        assertThat(context.getBeanNamesForType(ReportExecutionClient.class)).isEmpty();
     }
 
     @Test

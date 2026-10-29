@@ -24,3 +24,81 @@ management:
       show-components: never
       probes:
         enabled: true
+
+# Inference engine (OpenAI-compatible Chat Completions API). The adapter is registered only when base-url is set,
+# e.g. with the "ollama" profile or NEXORA_INTELLIGENCE_INFERENCE_BASE_URL. The API key, if any, only comes from
+# NEXORA_INTELLIGENCE_INFERENCE_API_KEY.
+nexora:
+  intelligence:
+    inference:
+      model: ${NEXORA_INTELLIGENCE_INFERENCE_MODEL:gpt-oss:20b}
+      connect-timeout: 2s
+      read-timeout: 60s
+      max-retries: 0
+      # 0 or 1: a complete answer rejected by the strict validation is asked once more (fixed note, never the answer);
+      # never for HTTP errors, timeouts, truncated answers or context limits.
+      invalid-output-retries: 1
+      structured-output: true
+      max-tokens: 4096
+      # Context window as configured on the server (Ollama: OLLAMA_CONTEXT_LENGTH). Prompt + max-tokens must fit.
+      context-tokens: ${NEXORA_INTELLIGENCE_INFERENCE_CONTEXT_TOKENS:8192}
+
+# Nexora Semantic (INT-3.4). The adapters are registered only when base-url is set; without it nothing changes.
+# The interpretation identity is a SERVICE principal with REPORTS_CLIENT of one tenant (OAuth2 client credentials);
+# every token is verified (JWKS signature, expiry, issuer, audience, principal type, role, tenant) before it is sent.
+# The client secret only comes from NEXORA_INTELLIGENCE_SEMANTIC_CLIENT_SECRET. Example for local development:
+#
+# nexora:
+#   intelligence:
+#     semantic:
+#       base-url: http://localhost:8080
+#       connect-timeout: 2s
+#       read-timeout: 10s
+#       max-retries: 0
+#       identity:
+#         tenant-id: <tenant uuid>
+#         token-uri: http://localhost:8180/realms/nexora/protocol/openid-connect/token
+#         jwk-set-uri: http://localhost:8180/realms/nexora/protocol/openid-connect/certs
+#         issuer: http://localhost:8180/realms/nexora
+#         audience: nexora-semantic
+#         client-id: <client id>
+#         client-secret: ${NEXORA_INTELLIGENCE_SEMANTIC_CLIENT_SECRET}
+#     planning:
+#       default-zone: UTC            # technical default, not a business zone
+#       source-zones:
+#         <data source uuid>: America/Mexico_City
+#
+# Nexora Reports (INT-3.5). Registered only when base-url is set. The execution identity is a SERVICE principal with
+# REPORT_RUNNER and audience nexora-reports (it may be the same OAuth2 client as Semantic's if it has both audiences
+# and roles). The secret only comes from NEXORA_INTELLIGENCE_REPORTS_CLIENT_SECRET.
+#
+# nexora:
+#   intelligence:
+#     reports:
+#       base-url: http://localhost:8090
+#       read-timeout: 90s           # above Reports' max-duration (60s)
+#       max-rows: 1000              # 1..10000, always sent as {"maxRows": n}
+#       max-retries: 0              # only executions that were never sent are retried
+#       identity:
+#         tenant-id: <tenant uuid>
+#         token-uri: http://localhost:8180/realms/nexora/protocol/openid-connect/token
+#         jwk-set-uri: http://localhost:8180/realms/nexora/protocol/openid-connect/certs
+#         issuer: http://localhost:8180/realms/nexora
+#         audience: nexora-reports
+#         required-role: REPORT_RUNNER
+#         client-id: <client id>
+#         client-secret: ${NEXORA_INTELLIGENCE_REPORTS_CLIENT_SECRET}
+#
+# Question API (INT-3.6). Disabled by default; when enabled it requires Semantic and Reports to be configured. Loopback
+# only, no end-user authentication (pilot). Tenant and data source come only from the configured alias.
+#
+# nexora:
+#   intelligence:
+#     api:
+#       enabled: true
+#       max-body-bytes: 8192           # 1024..65536
+#       max-concurrent-questions: 2    # 1..16, extra requests get 429
+#       data-sources:
+#         wellnode-demo:               # alias sent as context.dataSource
+#           tenant-id: <tenant uuid>
+#           data-source-id: <data source uuid>
